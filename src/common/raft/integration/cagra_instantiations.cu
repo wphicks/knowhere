@@ -19,15 +19,11 @@
 #include "common/raft/integration/raft_knowhere_index.cuh"
 #include "common/raft/proto/filtered_search_instantiation.cuh"
 
-RAFT_FILTERED_SEARCH_EXTERN(ivf_flat,
-    raft_knowhere::raft_data_t<raft_proto::raft_index_kind::ivf_flat>,
-    raft_knowhere::raft_indexing_t<raft_proto::raft_index_kind::ivf_flat>,
-    raft_knowhere::raft_input_indexing_t<raft_proto::raft_index_kind::ivf_flat>,
-    raft_knowhere::raft_data_t<raft_proto::raft_index_kind::ivf_flat>,
+RAFT_FILTERED_SEARCH_INSTANTIATION(cagra,
+    raft_knowhere::raft_data_t<raft_proto::raft_index_kind::cagra>,
+    raft_knowhere::raft_indexing_t<raft_proto::raft_index_kind::cagra>,
+    raft_knowhere::raft_input_indexing_t<raft_proto::raft_index_kind::cagra>,
+    raft_knowhere::raft_data_t<raft_proto::raft_index_kind::cagra>,
     raft_knowhere::knowhere_bitset_data_type,
     raft_knowhere::knowhere_bitset_indexing_type
 )
-
-namespace raft_knowhere {
-template struct raft_knowhere_index<raft_proto::raft_index_kind::ivf_flat>;
-}  // namespace raft_knowhere

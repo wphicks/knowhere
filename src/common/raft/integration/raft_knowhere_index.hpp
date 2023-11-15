@@ -43,7 +43,7 @@ template <>
 struct raft_io_type_mapper<true, raft_proto::raft_index_kind::ivf_pq> : std::true_type {
     using data_type = float;
     using indexing_type = std::int64_t;
-    using input_indexing_type = std::int64_t;
+    using input_indexing_type = std::uint32_t;
 };
 
 template <>
