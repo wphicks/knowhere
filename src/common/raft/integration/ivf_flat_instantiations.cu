@@ -16,7 +16,7 @@
  */
 #undef RAFT_EXPLICIT_INSTANTIATE_ONLY
 #include "common/raft/proto/raft_index_kind.hpp"
-#include "common/raft/integration/raft_knowhere_index.cuh"
+#include "common/raft/integration/type_mappers.hpp"
 #include "common/raft/proto/filtered_search_instantiation.cuh"
 
 RAFT_FILTERED_SEARCH_INSTANTIATION(ivf_flat,

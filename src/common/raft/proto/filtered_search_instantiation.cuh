@@ -20,6 +20,7 @@
 #include <raft/neighbors/cagra.cuh>
 #include <raft/neighbors/ivf_flat.cuh>
 #include <raft/neighbors/ivf_pq.cuh>
+#include <raft/neighbors/sample_filter.cuh>
 #include "common/raft/proto/raft_index_kind.hpp"
 
 namespace raft_proto {
