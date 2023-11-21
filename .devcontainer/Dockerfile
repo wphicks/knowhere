@@ -23,3 +23,5 @@ RUN apt-get update && \
     rm -rf /var/lib/apt/lists/*
 
 RUN pip3 install --no-cache-dir 'conan<2'
+
+ENV PATH="${PATH}:/home/coder/knowhere/.devcontainer/bin"

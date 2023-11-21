@@ -1,0 +1,13 @@
+#!/bin/bash
+set -e
+SCRIPT_PATH=$(readlink -e ${BASH_SOURCE[0]})
+SCRIPT_DIR=$( cd -- "$( dirname -- "${SCRIPT_PATH}" )" &> /dev/null && pwd )
+
+BUILD_DIR="${SCRIPT_DIR}/../../build"
+mkdir -p ${BUILD_DIR}
+BUILD_DIR="$(readlink -e $BUILD_DIR)"
+pushd $BUILD_DIR
+conan install .. --build=missing -o with_ut=True -o with_benchmark=True -o with_raft=True -s compiler.libcxx=libstdc++11 -s build_type=Release
+conan build ..
+pushd $BUILD_DIR/Release
+cmake -DWITH_RAFT=ON .

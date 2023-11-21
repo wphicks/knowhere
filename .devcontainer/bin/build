@@ -1,0 +1,12 @@
+#!/bin/bash
+SCRIPT_PATH=$(readlink -e ${BASH_SOURCE[0]})
+SCRIPT_DIR=$( cd -- "$( dirname -- "${SCRIPT_PATH}" )" &> /dev/null && pwd )
+BUILD_DIR="${SCRIPT_DIR}/../../build"
+
+BUILD_DIR="$(readlink -e $BUILD_DIR)"
+if [ ! -d $BUILD_DIR ]
+then
+  ${SCRIPT_DIR}/prep_build
+fi
+pushd $BUILD_DIR
+conan build ..

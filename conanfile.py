@@ -154,7 +154,8 @@ class KnowhereConan(ConanFile):
                 self)
         tc.variables["WITH_ASAN"] = self.options.with_asan
         tc.variables["WITH_DISKANN"] = self.options.with_diskann
-        tc.variables["WITH_RAFT"] = self.options.with_raft
+        if self.options.with_raft:
+            tc.variables["WITH_RAFT"] = "ON"
         tc.variables["WITH_PROFILER"] = self.options.with_profiler
         tc.variables["WITH_UT"] = self.options.with_ut
         tc.variables["WITH_BENCHMARK"] = self.options.with_benchmark
