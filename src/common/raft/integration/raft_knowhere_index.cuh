@@ -177,7 +177,7 @@ codebook_string_to_raft_codebook_gen(std::string const& codebook_string) {
 }
 [[nodiscard]] inline auto
 build_algo_string_to_cagra_build_algo(std::string const& algo_string) {
-    auto result = raft::neighbors::cagra::graph_build_algo::IVF_PQ;
+    /* auto result = raft::neighbors::cagra::graph_build_algo::IVF_PQ;
     if (algo_string == "IVF_PQ") {
         result = raft::neighbors::cagra::graph_build_algo::IVF_PQ;
     } else if (algo_string == "NN_DESCENT") {
@@ -185,7 +185,8 @@ build_algo_string_to_cagra_build_algo(std::string const& algo_string) {
     } else {
         RAFT_FAIL("Unrecognized CAGRA build algo %s", algo_string.c_str());
     }
-    return result;
+    return result; */
+    return raft::neighbors::cagra::graph_build_algo::NN_DESCENT;
 }
 
 [[nodiscard]] inline auto
