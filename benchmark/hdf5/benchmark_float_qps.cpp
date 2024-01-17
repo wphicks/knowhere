@@ -409,6 +409,7 @@ TEST_F(Benchmark_float_qps, TEST_CAGRA) {
         conf[knowhere::indexparam::GRAPH_DEGREE] = gd;
         conf[knowhere::indexparam::INTERMEDIATE_GRAPH_DEGREE] = gd;
         conf[knowhere::indexparam::MAX_ITERATIONS] = 64;
+        conf[knowhere::indexparam::BUILD_ALGO] = "NN_DESCENT";
         std::string index_file_name = get_index_name({gd});
         create_index(index_file_name, conf);
         test_cagra(conf);
